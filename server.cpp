@@ -113,7 +113,7 @@ int main() {
         string responseBody = "";
         string mimeType = "text/html; charset=UTF-8";
 
-            // Upangaji wa Kurasa (Routing)
+                // Upangaji wa Kurasa (Routing)
     if (path == "/" || path == "/index.html") {
         ifstream file("index.html");
         if (file.is_open()) {
@@ -132,6 +132,15 @@ int main() {
             responseBody = "<h1>404 - Faili la teacher-login.html halionekani</h1>";
         }
     }
+    else if (path.find("teacher-dashboard") != string::npos) {
+        ifstream file("teacher-dashboard.html");
+        if (file.is_open()) {
+            stringstream buf; buf << file.rdbuf();
+            responseBody = buf.str();
+        } else {
+            responseBody = "<h1>404 - Faili la teacher-dashboard.html halionekani</h1>";
+        }
+    }
     else if (path.find("student-register") != string::npos) {
         ifstream file("student-register.html");
         if (file.is_open()) {
@@ -141,8 +150,7 @@ int main() {
             responseBody = "<h1>404 - Faili la student-register.html halionekani</h1>";
         }
     }
-        else if (path.find("/save-student") != string::npos) {
-            // Hapa C++ inasajili mwanafunzi na kuweka password kuwa majina yake matatu
+         // Hapa C++ inasajili mwanafunzi na kuweka password kuwa majina yake matatu
             Student s;
             s.fullName = "Mwanafunzi Mpya ICoT"; 
             s.password = s.fullName; // Majina matatu yanakuwa password
