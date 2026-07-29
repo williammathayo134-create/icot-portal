@@ -176,9 +176,10 @@ int main() {
     int server_port = env_port ? stoi(env_port) : 10000;
     cout << "[PORT] Seva inasikiliza kupitia bandari namba: " << server_port << endl;
 
-    // Kuunda na kuendesha seva
-    ICoTBackendServer myServer;
+     // Kuunda na kuendesha seva yenye jina na port
+    ICoTBackendServer myServer("ICoT-Secure-Engine-Pro", server_port);
     myServer.start();
+
 
     // Seva inakaa hewani daima
     while (true) {
