@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="sw">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ukurasa Mkuu - ICoT Portal</title>
+    <style>
+        :root {
+            --primary-color: #3b82f6;
+            --primary-dark: #1d4ed8;
+            --bg-color: #f4f6f9;
+            --card-bg: #ffffff;
+            --text-main: #333333;
+            --text-muted: #64748b;
+            --border-color: #e2e8f0;
+        }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        header {
+            background: #1e293b;
+            color: #fff;
+            padding: 30px 0;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        header h1 {
+            font-size: 28px;
+            margin-bottom: 8px;
+        }
+        header p {
+            font-size: 15px;
+            color: #94a3b8;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+            flex: 1;
+            width: 100%;
+        }
+        .hero-section {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .hero-section h2 {
+            font-size: 24px;
+            color: #1e293b;
+            margin-bottom: 12px;
+        }
+        .hero-section p {
+            color: var(--text-muted);
+            font-size: 16px;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        .nav-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+        .nav-card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border-top: 5px solid var(--primary-color);
+            transition: transform 0.3s ease;
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .nav-card:hover {
+            transform: translateY(-5px);
+        }
+        .nav-card h3 {
+            font-size: 20px;
+            color: #1e293b;
+            margin-bottom: 10px;
+        }
+        .nav-card p {
+            color: var(--text-muted);
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+        .nav-btn {
+            background: var(--primary-color);
+            color: white;
+            padding: 10px 15px;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 14px;
+            display: inline-block;
+        }
+        .nav-card:hover .nav-btn {
+            background: var(--primary-dark);
+        }
+        footer {
+            background: #1e293b;
+            color: #94a3b8;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: auto;
+            font-size: 13px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container" style="margin: 0 auto; padding: 0;">
+            <h1>Taasisi ya Teknolojia ya Ujenzi (ICoT)</h1>
+            <p>Mfumo Jumuishi wa Huduma za Kidijitali na Mawasiliano</p>
+        </div>
+    </header>
+
+    <div class="container">
+        
+        <div class="hero-section">
+            <h2>Karibu kwenye Jukwaa Kuu</h2>
+            <p>Chagua huduma unayohitaji hapa chini ili uweze kuendelea na masomo, ununuzi wa vifurushi, au shughuli za soko la mtandaoni.</p>
+        </div>
+
+        <div class="nav-grid">
+            
+            <!-- Kadi 1: Kuingia kwa Mwanafunzi -->
+            <a href="student-login.html" class="nav-card">
+                <div>
+                    <h3>Kuingia kwa Wanafunzi</h3>
+                    <p>Weka namba yako ya usajili na neno siri ili kuona matokeo na ripoti za mitihani.</p>
+                </div>
+                <div>
+                    <span class="nav-btn">Ingia Sasa</span>
+                </div>
+            </a>
+
+            <!-- Kadi 2: Vifurushi na Bando -->
+            <a href="bundles.html" class="nav-card">
+                <div>
+                    <h3>Huduma za Vifurushi</h3>
+                    <p>Nunua bando la intaneti la siku, wiki, au mwezi kwa ajili ya utafiti na masomo.</p>
+                </div>
+                <div>
+                    <span class="nav-btn">Tazama Vifurushi</span>
+                </div>
+            </a>
+
+            <!-- Kadi 3: Soko la Mtandaoni -->
+            <a href="marketplace.html" class="nav-card">
+                <div>
+                    <h3>Soko la Mtandaoni</h3>
+                    <p>Onyesha au nunua bidhaa za kiteknolojia, viatu vya usalama, na vifaa vya ujenzi.</p>
+                </div>
+                <div>
+                    <span class="nav-btn">Ingia Sokoni</span>
+                </div>
+            </a>
+
+        </div>
+
+    </div>
+
+    <footer>
+        <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0;">
+            <p>&copy; 2026 Mfumo Jumuishi wa Taarifa - ICoT. Haki zote zimehifadhiwa.</p>
+        </div>
+    </footer>
+
+    <script>
+        console.log("Ukurasa mkuu wa ICoT Portal umepakiwa kikamilifu.");
+    </script>
+</body>
+</html>
+<!-- 
+    Documentation Block - index.html:
+    - Lengo: Kutoa ukurasa mkuu unaounganisha moduli zote za mfumo wa ICoT.
+-->

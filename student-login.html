@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="sw">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kuingia kwa Wanafunzi - ICoT Portal</title>
+    <style>
+        :root {
+            --primary-color: #3b82f6;
+            --primary-dark: #1d4ed8;
+            --bg-color: #f4f6f9;
+            --card-bg: #ffffff;
+            --text-main: #333333;
+            --text-muted: #64748b;
+            --border-color: #e2e8f0;
+        }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        header {
+            background: #1e293b;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        header h1 {
+            font-size: 22px;
+            margin-bottom: 5px;
+        }
+        header p {
+            font-size: 13px;
+            color: #94a3b8;
+        }
+        .container {
+            max-width: 500px;
+            margin: 40px auto;
+            padding: 0 20px;
+            flex: 1;
+            width: 100%;
+        }
+        .login-card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 35px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            border-top: 5px solid var(--primary-color);
+        }
+        .login-card h2 {
+            color: #1e293b;
+            font-size: 24px;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        .login-card p {
+            color: var(--text-muted);
+            font-size: 14px;
+            text-align: center;
+            margin-bottom: 25px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            font-size: 14px;
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 8px;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            font-size: 14px;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+        .form-group input:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+        }
+        .btn-submit {
+            width: 100%;
+            background: var(--primary-color);
+            color: #fff;
+            padding: 12px;
+            border: none;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.2s;
+            margin-top: 10px;
+        }
+        .btn-submit:hover {
+            background: var(--primary-dark);
+        }
+        .back-link {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            font-size: 14px;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+        footer {
+            background: #1e293b;
+            color: #94a3b8;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: auto;
+            font-size: 13px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container" style="max-width: 1200px;">
+            <h1>Taasisi ya Teknolojia ya Ujenzi (ICoT)</h1>
+            <p>Sehemu Maalum ya Kuingia Wanafunzi</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="login-card">
+            <h2>Ingia Kwenye Akaunti</h2>
+            <p>Weka namba yako ya usajili na neno siri ili kuona matokeo na ripoti zako.</p>
+            
+            <form action="student-dashboard.html" method="POST">
+                <div class="form-group">
+                    <label for="reg_number">Namba ya Usajili (Registration Number)</label>
+                    <input type="text" id="reg_number" name="reg_number" placeholder="Mfano: ICoT/2026/001" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Neno Siri (Password)</label>
+                    <input type="password" id="password" name="password" placeholder="Weka neno siri lako la siri" required>
+                </div>
+
+                <button type="submit" class="btn-submit">Ingia Kwenye Mfumo</button>
+            </form>
+
+            <a href="index.html" class="back-link">&larr; Rudi kwenye Ukurasa Mkuu</a>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container" style="max-width: 1200px;">
+            <p>&copy; 2026 Mfumo Jumuishi wa Taarifa - ICoT. Haki zote zimehifadhiwa.</p>
+        </div>
+    </footer>
+
+    <script>
+        console.log("Moduli ya kuingia wanafunzi imepakiwa kikamilifu.");
+    </script>
+</body>
+</html>
+<!-- 
+    Documentation Block - student-login.html:
+    - Lengo: Kutoa fomu salama ya kuingia kwa wanafunzi wa ICoT.
+    - Usalama: Inatumia njia ya POST kuwasilisha taarifa za siri kwenda kwenye server.
+-->

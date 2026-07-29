@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="sw">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashibodi ya Mwanafunzi - ICoT Portal</title>
+    <style>
+        :root {
+            --primary-color: #3b82f6;
+            --primary-dark: #1d4ed8;
+            --bg-color: #f4f6f9;
+            --card-bg: #ffffff;
+            --text-main: #333333;
+            --text-muted: #64748b;
+            --border-color: #e2e8f0;
+        }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        header {
+            background: #1e293b;
+            color: #fff;
+            padding: 20px 0;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        header h1 {
+            font-size: 20px;
+        }
+        .logout-btn {
+            background: #ef4444;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 600;
+        }
+        .logout-btn:hover {
+            background: #dc2626;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 0 20px;
+            flex: 1;
+            width: 100%;
+        }
+        .profile-card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border-left: 5px solid var(--primary-color);
+        }
+        .profile-card h3 {
+            font-size: 20px;
+            color: #1e293b;
+            margin-bottom: 8px;
+        }
+        .profile-card p {
+            color: var(--text-muted);
+            font-size: 14px;
+        }
+        .results-section {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        .results-section h4 {
+            font-size: 18px;
+            color: #1e293b;
+            margin-bottom: 15px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        table th, table td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+            font-size: 14px;
+        }
+        table th {
+            background: #f8fafc;
+            color: #1e293b;
+            font-weight: 600;
+        }
+        table td {
+            color: var(--text-main);
+        }
+        footer {
+            background: #1e293b;
+            color: #94a3b8;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: auto;
+            font-size: 13px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-content">
+            <h1>ICoT - Dashibodi ya Mwanafunzi</h1>
+            <a href="student-login.html" class="logout-btn">Toka Nje (Logout)</a>
+        </div>
+    </header>
+
+    <div class="container">
+        
+        <div class="profile-card">
+            <h3>Habari, Mwanafunzi</h3>
+            <p>Namba ya Usajili: <strong>ICoT/2026/001</strong> | Kozi: <strong>Teknolojia ya Ujenzi na Uhandisi</strong></p>
+        </div>
+
+        <div class="results-section">
+            <h4>Taarifa ya Matokeo ya Mitihani ya Muhula</h4>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Namba ya Somo</th>
+                        <th>Jina la Somo</th>
+                        <th>Alama (%)</th>
+                        <th>Hali / Daraja</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>ENG 101</td>
+                        <td>Ujenzi wa Miundombinu na Barabara</td>
+                        <td>85</td>
+                        <td><strong style="color: #10b981;">Vizuri Sana (A)</strong></td>
+                    </tr>
+                    <tr>
+                        <td>ENG 102</td>
+                        <td>Sheria na Usalama Mahali pa Kazi</td>
+                        <td>78</td>
+                        <td><strong style="color: #10b981;">Vizuri (B+)</strong></td>
+                    </tr>
+                    <tr>
+                        <td>ENG 103</td>
+                        <td>Hesabu za Uhandisi</td>
+                        <td>72</td>
+                        <td><strong style="color: #3b82f6;">Wastani Mzuri (B)</strong></td>
+                    </tr>
+                    <tr>
+                        <td>ENG 104</td>
+                        <td>Teknolojia ya Mitambo na Injini</td>
+                        <td>80</td>
+                        <td><strong style="color: #10b981;">Vizuri Sana (A)</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+    <footer>
+        <div class="container" style="max-width: 1200px; margin: 0 auto;">
+            <p>&copy; 2026 Mfumo Jumuishi wa Taarifa - ICoT. Haki zote zimehifadhiwa.</p>
+        </div>
+    </footer>
+
+    <script>
+        console.log("Dashibodi ya mwanafunzi imepakiwa kikamilifu.");
+    </script>
+</body>
+</html>
+<!-- 
+    Documentation Block - student-dashboard.html:
+    - Lengo: Kuonyesha matokeo na maelezo binafsi ya mwanafunzi baada ya kuingia kwenye mfumo.
+-->

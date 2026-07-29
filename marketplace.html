@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="sw">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soko la Mtandaoni - ICoT Portal</title>
+    <style>
+        :root {
+            --primary-color: #3b82f6;
+            --primary-dark: #1d4ed8;
+            --bg-color: #f4f6f9;
+            --card-bg: #ffffff;
+            --text-main: #333333;
+            --text-muted: #64748b;
+            --border-color: #e2e8f0;
+        }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        header {
+            background: #1e293b;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        header h1 {
+            font-size: 22px;
+            margin-bottom: 5px;
+        }
+        header p {
+            font-size: 13px;
+            color: #94a3b8;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 0 20px;
+            flex: 1;
+            width: 100%;
+        }
+        .market-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .market-header h2 {
+            font-size: 26px;
+            color: #1e293b;
+            margin-bottom: 10px;
+        }
+        .market-header p {
+            color: var(--text-muted);
+            font-size: 15px;
+        }
+        .market-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+        .product-card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border-top: 5px solid var(--primary-color);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .product-card h3 {
+            font-size: 18px;
+            color: #1e293b;
+            margin-bottom: 8px;
+        }
+        .product-price {
+            font-size: 18px;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin: 10px 0;
+        }
+        .product-desc {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-bottom: 15px;
+        }
+        .btn-order {
+            display: block;
+            background: var(--primary-color);
+            color: white;
+            padding: 10px;
+            border-radius: 6px;
+            text-align: center;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            transition: background 0.2s;
+        }
+        .btn-order:hover {
+            background: var(--primary-dark);
+        }
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+        footer {
+            background: #1e293b;
+            color: #94a3b8;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: auto;
+            font-size: 13px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container" style="margin: 0 auto; padding: 0;">
+            <h1>Taasisi ya Teknolojia ya Ujenzi (ICoT)</h1>
+            <p>Soko la Wazi na Ubunifu wa Wanafunzi (Marketplace)</p>
+        </div>
+    </header>
+
+    <div class="container">
+        
+        <div class="market-header">
+            <h2>Bidhaa na Huduma Zinazopatikana</h2>
+            <p>Onyesha au nunua bidhaa za kiteknolojia, vifaa vya ujenzi, na huduma mbalimbali kutoka kwa wanafunzi.</p>
+        </div>
+
+        <div class="market-grid">
+            
+            <!-- Bidhaa 1 -->
+            <div class="product-card">
+                <div>
+                    <h3>Viatu vya Usalama vya Kazi</h3>
+                    <div class="product-price">Tsh 45,000</div>
+                    <p class="product-desc">Viatu imara vya chuma mbele vinavyofaa kwa matumizi ya viwanja vya ujenzi na karakana za mitambo.</p>
+                </div>
+                <div>
+                    <a href="#" class="btn-order" onclick="alert('Ombi la kununua limetumwa kwa muuzaji!');">Weka Oda</a>
+                </div>
+            </div>
+
+            <!-- Bidhaa 2 -->
+            <div class="product-card">
+                <div>
+                    <h3>Moduli ya Droni na Vifaa</h3>
+                    <div class="product-price">Tsh 120,000</div>
+                    <p class="product-desc">Seti kamili ya fremu, mota za brushless, na vifaa vya kielektroniki kwa ajili ya kujenga droni za utafiti.</p>
+                </div>
+                <div>
+                    <a href="#" class="btn-order" onclick="alert('Ombi la kununua limetumwa kwa muuzaji!');">Weka Oda</a>
+                </div>
+            </div>
+
+            <!-- Bidhaa 3 -->
+            <div class="product-card">
+                <div>
+                    <h3>Huduma ya Kutengeneza Programu</h3>
+                    <div class="product-price">Makubaliano</div>
+                    <p class="product-desc">Huduma za kitaalam za kuandika mifumo midogo ya wavuti na API za ndani kwa ajili ya miradi ya chuo.</p>
+                </div>
+                <div>
+                    <a href="#" class="btn-order" onclick="alert('Ombi la huduma limetumwa!');">Wasiliana na Mtaalam</a>
+                </div>
+            </div>
+
+        </div>
+
+        <div style="text-align: center;">
+            <a href="index.html" class="back-link">&larr; Rudi kwenye Ukurasa Mkuu</a>
+        </div>
+
+    </div>
+
+    <footer>
+        <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0;">
+            <p>&copy; 2026 Soko la Mtandaoni - ICoT Portal. Haki zote zimehifadhiwa.</p>
+        </div>
+    </footer>
+
+    <script>
+        console.log("Moduli ya soko la mtandaoni imepakiwa kikamilifu.");
+    </script>
+</body>
+</html>
+<!-- 
+    Documentation Block - marketplace.html:
+    - Lengo: Kutoa jukwaa la sokoni la kuonyesha na kuuza bidhaa za wanafunzi.
+-->
