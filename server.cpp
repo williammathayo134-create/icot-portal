@@ -171,22 +171,22 @@ int main() {
     // Kusafisha na kuanzisha mazingira ya seva
     runSystemDiagnostics();
 
-       
     // Kusoma bandari (PORT) iliyotolewa na Render
     const char* env_port = getenv("PORT");
     int server_port = env_port ? stoi(env_port) : 10000;
     cout << "[PORT] Seva inasikiliza kupitia bandari namba: " << server_port << endl;
 
-    // Kuunda na kuendesha seva yenye jina maalum
-    ICoTBackendServer myServer("ICoT-Secure-Engine-Pro");
+    // Kuunda na kuendesha seva
+    ICoTBackendServer myServer;
     myServer.start();
 
-    // Seva inakaa hewani ikisikiliza maombi ya wateja daima
+    // Seva inakaa hewani daima
     while (true) {
-        // Kitanzi cha kudumu kuzuia programu isijifunge
+        // Kitanzi cha kudumu
     }
 
     return 0;
+}
 
 
 
