@@ -1,3 +1,6 @@
+#include <sys/socket.h>
+#include <netinet/in.h>
+#include <unistd.h>
 #include <iostream>
 #include <string>
 #include <vector>
@@ -176,18 +179,35 @@ int main() {
     int server_port = env_port ? stoi(env_port) : 10000;
     cout << "[PORT] Seva inasikiliza kupitia bandari namba: " << server_port << endl;
 
-     // Kuunda na kuendesha seva yenye jina na port
+    // Kuanzisha TCP Socket halisi inayotambuliwa na Render
+    int server_fd = socket(AF_INET, SOCK_STREAM, 0);
+    if (server_fd != -1) {
+        int opt = 1;
+        setsockopt(server_fd, SOL_SOCKET, SO_REUSEADDR, &opt, sizeof(opt));
+
+        sockaddr_in address;
+        address.sin_family = AF_INET;
+        address.sin_addr.s_addr = INADDR_ANY;
+        address.sin_port = htons(server_port);
+
+        if (bind(server_fd, (struct sockaddr*)&address, sizeof(address)) >= 0) {
+            listen(server_fd, 3);
+            cout << "[SOCKET] Port " << server_port << " imefunguliwa na inasubiri miunganisho kikamilifu!" << endl;
+        }
+    }
+
+    // Kuunda na kuendesha seva yenye jina na port
     ICoTBackendServer myServer("ICoT-Secure-Engine-Pro", server_port);
     myServer.start();
 
-
-    // Seva inakaa hewani daima
+    // Seva inakaa hewani daima ikisikiliza
     while (true) {
         // Kitanzi cha kudumu
     }
 
     return 0;
 }
+
 
 
 
