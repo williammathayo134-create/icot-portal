@@ -49,15 +49,19 @@ string generateSpecialCode() {
 
 // C++ Engine ya Kuhesabu Jumla, Daraja, na Position Otomatiki
 void calculateStudentStandings() {
-    // Kupanga position kulingana na jumla ya maksi
-    sort(globalStudents.begin(), globalStudents.end(), [](const Student& a, const Student& b) {
-        return a.totalMarks > b.totalMarks;
-    });
+    for (size_t i = 0; i < globalStudents.size(); ++i) {
+        for (size_t j = i + 1; j < globalStudents.size(); ++j) {
+            if (globalStudents[i].totalMarks < globalStudents[j].totalMarks) {
+                Student temp = globalStudents[i];
+                globalStudents[i] = globalStudents[j];
+                globalStudents[j] = temp;
+            }
+        }
+    }
 
     for (size_t i = 0; i < globalStudents.size(); ++i) {
         globalStudents[i].position = i + 1;
         
-        // Upangaji wa Madaraja (Grades)
         if (globalStudents[i].totalMarks >= 160) globalStudents[i].grade = "Grade A (Excellent)";
         else if (globalStudents[i].totalMarks >= 130) globalStudents[i].grade = "Grade B (Very Good)";
         else if (globalStudents[i].totalMarks >= 100) globalStudents[i].grade = "Grade C (Good)";
@@ -65,6 +69,7 @@ void calculateStudentStandings() {
         else globalStudents[i].grade = "Grade F (Fail)";
     }
 }
+
 
 int main() {
     const char* env_port = getenv("PORT");

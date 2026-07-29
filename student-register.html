@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="sw">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usajili wa Mwanafunzi - ICoT</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #0f172a; color: #f8fafc; padding: 20px; }
+        .container { max-width: 450px; margin: 40px auto; background: #1e293b; padding: 25px; border-radius: 10px; border-top: 4px solid #38bdf8; }
+        h2 { color: #38bdf8; text-align: center; }
+        .form-group { margin-bottom: 15px; }
+        label { display: block; margin-bottom: 5px; color: #94a3b8; font-size: 13px; }
+        input, select { width: 100%; padding: 10px; background: #334155; border: 1px solid #475569; color: #fff; border-radius: 5px; box-sizing: border-box; }
+        button { width: 100%; background: #38bdf8; color: #0f172a; padding: 10px; border: none; border-radius: 5px; font-weight: bold; cursor: pointer; margin-top: 10px; }
+        button:hover { background: #0ea5e9; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Usajili wa Mwanafunzi</h2>
+        <p style="text-align: center; font-size: 12px; color: #94a3b8;">Nenosiri lako litakuwa majina yako matatu.</p>
+        <form action="/save-student" method="POST">
+            <div class="form-group">
+                <label>Majina Kamili (Matatu):</label>
+                <input type="text" name="fullname" placeholder="Mfano: Juma Hassan Ali" required>
+            </div>
+            <div class="form-group">
+                <label>Namba ya Simu:</label>
+                <input type="tel" name="phone" placeholder="0712345678" required>
+            </div>
+            <div class="form-group">
+                <label>Email:</label>
+                <input type="email" name="email" placeholder="mwanafunzi@gmail.com" required>
+            </div>
+            <div class="form-group">
+                <label>Tarehe ya Kujiandikisha:</label>
+                <input type="date" name="reg_date" required>
+            </div>
+            <div class="form-group">
+                <label>Chagua Level:</label>
+                <select name="level" required>
+                    <option value="">-- Chagua Level --</option>
+                    <option value="Level 1">Level 1</option>
+                    <option value="Level 2">Level 2</option>
+                    <option value="Level 3">Level 3</option>
+                    <option value="Level 4">Level 4</option>
+                    <option value="Level 5">Level 5</option>
+                    <option value="Level 6">Level 6</option>
+                    <option value="Level 7">Level 7</option>
+                    <option value="Level 8">Level 8</option>
+                </select>
+            </div>
+            <button type="submit">Jisajili Sasa</button>
+        </form>
+    </div>
+</body>
+</html>
