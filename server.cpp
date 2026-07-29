@@ -175,30 +175,14 @@ int main() {
     ICoTBackendServer myServer("ICoT-Secure-Engine-Pro", 8080);
     myServer.start();
 
-    // Kufanya majaribio ya endpoints mbalimbali zenye ulinzi wa encryption
-    cout << "\n--- MAJARIBIO YA USALAMA NA API ENDPOINTS ---" << endl;
-    myServer.handleApiRequest("/api/v1/auth/login", "Password123_Secure");
-    myServer.handleApiRequest("/api/v1/students/records", "ICoT/2026/001: Williams Data Confirmed");
-    myServer.handleApiRequest("/api/v1/bundles/purchase", "Request_Package_Monthly_45GB");
-    myServer.handleApiRequest("/api/v1/unknown/path", "Unauthorized_Probe");
-
-    // Kufanya hesabu za GPA za mfano
-    vector<double> studentGrades = {85.5, 78.0, 72.5, 80.0};
-    double finalGpaResult = calculateStudentGPA(studentGrades);
-    cout << "\n[ACADEMIC] Wastani wa Alama za Mwanafunzi zilizokokotolewa: " << finalGpaResult << "%" << endl;
-
-    // Kuiga usafirishaji wa data
-    simulateExternalApiSync("EmailJS_Notification_Service", "Template: WILLIAM RICHARD - Status: Success");
-
-    // Kufunga seva salama
-    myServer.stop();
-
-    cout << "\n==========================================================" << endl;
-    cout << "  Faili la server.cpp limekamilika kwa ustadi na mistari 500  " << endl;
-    cout << "==========================================================" << endl;
+        // Seva inakaa hewani ikisikiliza maombi ya wateja daima
+    while (true) {
+        // Kitanzi cha kudumu kuzuia programu isijifunge
+    }
 
     return 0;
 }
+
 
 // =========================================================================
 // Mwisho wa faili la server.cpp - C++ Backend & Encryption Module
