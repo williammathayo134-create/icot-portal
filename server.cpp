@@ -148,21 +148,23 @@ int main() {
             
             responseBody = "<h1>Usajili Umekamilika!</h1><p>Nenosiri (Password) yako ni majina yako matatu.</p><a href='/'>Rudi Nyumbani</a>";
         }
-        else {
-            // Kusoma faili za kawaida zilizopo kwenye folda
-            ifstream file(path.substr(1));
-            if (file.is_open()) {
-                stringstream buf; buf << file.rdbuf();
-                responseBody = buf.str();
+            else {
+        // Angalia kama path inaomba ukurasa wa matokeo na mwalimu hajasubiri bado
+        if (path.find("result") != string::npos || path.find("matokeo") != string::npos) {
+            if (!teacherSubmittedResults) {
+                responseBody = "<div style='background:#0f172a;color:#fff;text-align:center;padding:50px;font-family:Arial;'>"
+                               "<h1 style='color:#ef4444;'>Not Available</h1>"
+                               "<p style='color:#94a3b8;'>Mwalimu bado hajasubiri matokeo kwa muhula huu.</p>"
+                               "<p><a href='/' style='color:#38bdf8;'>Rudi Nyumbani</a></p>"
+                               "</div>";
             } else {
-                // Kama mwalimu hajasubiri matokeo, mwanafunzi anaona Not Available kwenye matokeo
-                if (!teacherSubmittedResults && path.find("results") != string::npos) {
-                    responseBody = "<h1>Results Not Available</h1><p>Mwalimu bado hajasubiri matokeo kwa muhula huu.</p>";
-                } else {
-                    responseBody = "<h1>404 - Kurasa Haionekani</h1>";
-                }
+                responseBody = "<h1>Matokeo Yamewasilishwa na Mwalimu</h1>";
             }
+        } else {
+            responseBody = "<h1>404 - Kurasa Haionekani</h1>";
         }
+    }
+
 
         string httpResponse = "HTTP/1.1 200 OK\r\n"
                               "Content-Type: " + mimeType + "\r\n"
