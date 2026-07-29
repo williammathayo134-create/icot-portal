@@ -113,36 +113,34 @@ int main() {
         string responseBody = "";
         string mimeType = "text/html; charset=UTF-8";
 
-        // Upangaji wa Kurasa (Routing)
-        if (path == "/" || path == "/index.html") {
-            // Soma faili la index.html au toa ukurasa wa mwanzo
-            ifstream file("index.html");
-            if (file.is_open()) {
-                stringstream buf; buf << file.rdbuf();
-                responseBody = buf.str();
-            } else {
-                responseBody = "<!DOCTYPE html><html><head><title>ICoT Portal</title></head>"
-                               "<body style='background:#0f172a;color:#fff;font-family:Arial;padding:40px;text-align:center;'>"
-                               "<h1>Karibu ICoT Portal</h1>"
-                               "<p>Williams Auto Electric Engineer System</p>"
-                               "<p><a href='/student-register.html' style='color:#38bdf8;'>Usajili wa Mwanafunzi</a> | "
-                               "<a href='/teacher-login.html' style='color:#38bdf8;'>Mlango wa Mwalimu</a></p></body></html>";
-            }
-        } 
-        else if (path.find("/student-register") != string::npos) {
-            // Mfano wa kurudisha fomu ya usajili au ujumbe wa mafanikio ya usajili wa mwanafunzi
-            responseBody = "<!DOCTYPE html><html lang='sw'><head><meta charset='UTF-8'><title>Usajili wa Mwanafunzi</title></head>"
-                           "<body style='background:#0f172a;color:#fff;font-family:Arial;padding:40px;'>"
-                           "<h2>Usajili wa Mwanafunzi (Level 1 - 8)</h2>"
-                           "<form method='GET' action='/save-student'>"
-                           "Majina Matatu: <input type='text' name='name' required><br><br>"
-                           "Namba ya Simu: <input type='text' name='phone' required><br><br>"
-                           "Email: <input type='email' name='email' required><br><br>"
-                           "Tarehe ya Kujiandikisha: <input type='date' name='date' required><br><br>"
-                           "Level: <select name='level'><option>Level 1</option><option>Level 2</option><option>Level 3</option><option>Level 4</option><option>Level 5</option><option>Level 6</option><option>Level 7</option><option>Level 8</option></select><br><br>"
-                           "<button type='submit'>Jisajili (Password itakuwa majina yako matatu)</button>"
-                           "</form></body></html>";
+            // Upangaji wa Kurasa (Routing)
+    if (path == "/" || path == "/index.html") {
+        ifstream file("index.html");
+        if (file.is_open()) {
+            stringstream buf; buf << file.rdbuf();
+            responseBody = buf.str();
+        } else {
+            responseBody = "<h1>404 - Ukurasa Haupatikani</h1>";
         }
+    } 
+    else if (path.find("teacher-login") != string::npos) {
+        ifstream file("teacher-login.html");
+        if (file.is_open()) {
+            stringstream buf; buf << file.rdbuf();
+            responseBody = buf.str();
+        } else {
+            responseBody = "<h1>404 - Faili la teacher-login.html halionekani</h1>";
+        }
+    }
+    else if (path.find("student-register") != string::npos) {
+        ifstream file("student-register.html");
+        if (file.is_open()) {
+            stringstream buf; buf << file.rdbuf();
+            responseBody = buf.str();
+        } else {
+            responseBody = "<h1>404 - Faili la student-register.html halionekani</h1>";
+        }
+    }
         else if (path.find("/save-student") != string::npos) {
             // Hapa C++ inasajili mwanafunzi na kuweka password kuwa majina yake matatu
             Student s;
